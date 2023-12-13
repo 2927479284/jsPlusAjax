@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax请求-1</title>
+</head>
+<body>
+
+<script>
+
+    // $.ajax();
+    var xmlHttpRequest = new XMLHttpRequest();
+    // js 原生请求
+
+    // xmlHttpRequest.open('GET','https://58.87.70.39:8080/home/list',true);
+    // 配置请求方式
+    xmlHttpRequest.open('GET','https://192.168.240.228:8080/home/list',true);
+
+    // 设置请求头
+    // xmlHttpRequest.setRequestHeader("Authorization","Bearer eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6ImE1NThhYzk4LTI0MzktNDZiNi1hMjE4LTNkZGFlZGE0MWQ4ZiJ9.VDndTb98jiQleLMMmfEU1jxlildOtHrYX3wGc3SJIK4QXoqE43gI4UbvHwvCK9-5H7OMWCM-P7EXfl6u0c0sIg");
+
+    // 发送请求
+    xmlHttpRequest.send();
+
+    console.log(xmlHttpRequest.readyState);
+    console.log(xmlHttpRequest.status);
+    xmlHttpRequest.onreadystatechange = function () {
+        if (xmlHttpRequest.readyState === 4 && xmlHttpRequest.status === 200) {
+            console.log(xmlHttpRequest.responseText);
+        }
+    }
+</script>
+</body>
+<script src="/js/jquery3.7.1.js"></script>
+</html>
